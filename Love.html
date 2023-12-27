@@ -1,0 +1,28 @@
+html
+<style>
+    #noButton {
+        transition: transform 0.5s ease-out;
+    }
+</style>
+
+<section>
+    <h2>Would you like to go on a coffee date with me?</h2>
+    <p>Feel free to choose an option:</p>
+    <button onclick="acceptCoffeeDate()">Yes, I'd love to!</button>
+    <button id="noButton" onmousemove="moveAway(event)">No, not this time.</button>
+</section>
+
+<script>
+    let moveCount = 0;
+
+    function acceptCoffeeDate() {
+        alert("Yeahh! Looking forward to it!");
+    }
+
+    function moveAway(event) {
+        var noButton = document.getElementById("noButton");
+        moveCount++;
+        var distance = moveCount * 50; // Adjust the distance as needed
+        noButton.style.transform = "translateX(" + distance + "px)";
+    }
+</script>
